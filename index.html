@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button"
+               value="Get Selection" 
+               onmousedown="select()">
+    <p id="text"></p>
+    Hello world
+    <!-- <script src="index.js"></script> -->
+    <script>
+        function select(){
+    let element=document.getElementById("text");
+    let selectText='';
+    if(window.getSelection){
+        selectText=window.getSelection();
+        element.innerText=selectText;
+
+    }
+    else if(document.getSelection){
+        selectText=document.getSelection();
+        element.innerText=selectText;
+    }
+    else if (document.selection) {
+        selectedText = 
+        document.selection.createRange().text;
+        element.innerText=selectText;
+    } else {
+        element.innerText="abc";
+    }
+}
+    </script>
+</body>
+</html>

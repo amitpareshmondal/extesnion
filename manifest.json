@@ -1,5 +1,10 @@
 {
     "manifest_version":2,
     "name":"First extension",
-    "version":"0.1"
+    "version":"0.1",
+    "browser_action":{
+        "default_popup": "index.html",
+        "default_title": "Hello"
+    },
+    "permissions":["activeTab","clipboardRead","declarativeNetRequestFeedback","tabCapture"]
 }
